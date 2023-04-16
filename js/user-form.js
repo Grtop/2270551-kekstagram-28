@@ -86,9 +86,9 @@ const validateUniqueness = (tags) => {
 
 const errors = new Map();
 errors.set(validateFirstSymbol, 'Хэш-тег должен начинаться с символа # (решётка) !')
-  .set(validateLength, 'Максимальная длина хэш-тега 20 символов !')
+  .set(validateLength, `Максимальная длина хэш-тега ${MAX_HASHTAG_LENGTH} символов !`)
   .set(validateSymbols, 'Хэш-теги должны состоять из букв и чисел !')
-  .set(validateCount, 'Нельзя указать больше пяти хэш-тегов !')
+  .set(validateCount, `Нельзя указать больше ${MAX_HASHTAG_COUNT} хэш-тегов !`)
   .set(validateUniqueness, 'Хэш-теги не должны повторяться !');
 
 errors.forEach((value, key) =>
