@@ -16,7 +16,6 @@ const createPictures = (pictures) => {
     picElem.dataset.pictureElementId = id;
     pictureContainerFragment.append(picElem);
     pictureContainer.append(pictureContainerFragment);
-    //pictureContainer.append(picElem);
   });
   pictureContainer.append(pictureContainerFragment);
 };
