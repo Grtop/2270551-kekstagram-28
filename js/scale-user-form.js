@@ -18,6 +18,7 @@ const scalePhoto = (value) => {
 const changeZoom = (factor = 1) => {
   currentValue = parseInt(inputValue.value, 10);
   let newValue = currentValue + (STEP_VALUE * factor);
+
   if (newValue < MIN_SCALE) {
     newValue = MIN_SCALE;
   }
