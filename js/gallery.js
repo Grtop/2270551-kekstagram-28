@@ -23,7 +23,7 @@ const onDocumentKeydown = (evt) => {
 
 const createComment = ({avatar, message, name}) => {
   const comment = document.createElement('li');
-  comment.textContent = '<img class="social__picture" src="" alt="" width="35" height="35"><p class="social__text"></p>';
+  comment.innerHTML = '<img class="social__picture" src="" alt="" width="35" height="35"><p class="social__text"></p>';
   comment.classList.add('social__comment');
   comment.querySelector('.social__picture').src = avatar;
   comment.querySelector('.social__picture').alt = name;
@@ -40,7 +40,6 @@ const renderComments = () => {
   } else {
     commentsLoader.classList.remove('hidden');
   }
-
   const fragment = document.createDocumentFragment();
   for (let i = 0; i < commentsShown; i++) {
     const commentElement = createComment(comments[i]);
@@ -63,7 +62,7 @@ const renderComments = () => {
 
   commentList.append(fragment);
 
-  commentCount.textContent = `${commentsShown} из <span class="comments-count">${comments.length}</span> ${numDecline(comments.length,'коментарий','коментария','коментариев')}`;
+  commentCount.innerHTML = `${commentsShown} из <span class="comments-count">${comments.length}</span> ${numDecline(comments.length,'коментарий','коментария','коментариев')}`;
 };
 
 
